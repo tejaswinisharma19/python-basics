@@ -1,13 +1,27 @@
-class Person:
-    def introduce(self):
-        print("I am a person.")
+class Employee:
+    def __init__(self,name,employee_id):
+        self.name = name
+        self.employee_id = employee_id
         
-class Student(Person):
-    def introduce(self):
-        print("I am a student.")
         
-person1 = Person()
-student1 = Student()
+    def work(self):
+        print("Name:",self.name)
+        print("Employee ID:",self.employee_id)
+        
+        
+class Developer(Employee):
+    
+    def work(self):
+        print(f"{self.name} is developing software.")
+         
+class Designer(Employee):
+    
+    def work(self):
+        print(f"{self.name} is designing the user interface.")
+        
+developer = Developer("Alice", 101)
+designer = Designer("Bob",190)
 
-person1.introduce()
-student1.introduce()
+developer.work()
+designer.work()
+    

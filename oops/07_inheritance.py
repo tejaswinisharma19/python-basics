@@ -3,17 +3,26 @@ class Person:
         self.name = name
         self.age = age
 
-    def introduce(self):
-        print(f"My name is {self.name}")
-        print(f"I am {self.age} years old")
+    def display_person(self):
+        print("Name:", self.name)
+        print("Age:", self.age)
 
 
 class Student(Person):
-    def study(self):
-        print(f"{self.name} is studying.")
+    
+    def __init__(self,name,age,roll_no,course):
+        self.name = name
+        self.age = age
+        self.roll_no = roll_no
+        self.course = course
+        
+
+    def display_student(self):
+        print("Roll number:",self.roll_no)
+        print("Course:",self.course)
 
 
-student1 = Student("Alice", 20)
+student = Student("Winnie", 21, 101, "AIML")
 
-student1.introduce()
-student1.study()
+student.display_person()
+student.display_student()
